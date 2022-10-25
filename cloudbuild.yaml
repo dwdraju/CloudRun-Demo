@@ -6,4 +6,4 @@ steps:
   args: ["push", "gcr.io/$PROJECT_ID/cloudrun-demo"]
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'cloudrun-demo', '--image', 'gcr.io/$PROJECT_ID/cloudrun-demo:${SHORT_SHA}', '--region', 'us-central1', '--platform', 'managed']
+  args: ['run', 'deploy', 'cloudrun-demo', '--image', 'gcr.io/$PROJECT_ID/cloudrun-demo:${SHORT_SHA}', '--region', 'us-east1', '--platform', 'managed']
