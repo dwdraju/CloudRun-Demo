@@ -1,4 +1,4 @@
-FROM golang:1.12 AS build-env
+FROM golang:1.23 AS build-env
 COPY . /app
 WORKDIR /app
 RUN go get -d ./... && \
