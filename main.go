@@ -1,13 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<html><head><title>Cloud Run Demo</title></head><body><h1>Greetings from Cloud Run !!! YAY !!!</h1></body></html>\n")
+	// Set the response status code to 502 Bad Gateway
+	// w.WriteHeader(http.StatusBadGateway)
+	// w.Write([]byte("<html><head><title>502 Bad Gateway</title></head><body><h1>502 Bad Gateway</h1></body></html>\n"))
+
+	w.Write([]byte("<html><head><title>Cloud Run Demo</title></head><body><h1>Greetings from Cloud Run !!! YAY !!!</h1></body></html>\n"))
 }
 
 func main() {
