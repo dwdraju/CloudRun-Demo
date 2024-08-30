@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${SHORT_SHA}', '.' ]
+  args: [ 'build', '-t', '--build-arg','BUILDPLATFORM=${_BUILDPLATFORM}','${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${SHORT_SHA}', '.' ]
   env:
     - 'DOCKER_BUILDKIT=1'
 images:
@@ -10,3 +10,4 @@ substitutions:
   _LOCATION: "us-central1"
   _REPOSITORY: "cloudrun-demo"
   _IMAGE: "image"
+  _BUILDPLATFORM: "linux/amd64"
