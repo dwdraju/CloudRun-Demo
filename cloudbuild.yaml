@@ -8,4 +8,3 @@ substitutions:
   _LOCATION: "us-central1"
   _REPOSITORY: "cloudrun-demo"
   _IMAGE: "image"
-  # _BUILDPLATFORM: "linux/amd64"
