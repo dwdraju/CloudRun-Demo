@@ -1,6 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '--pack', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}', '.' ]
+  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}', '.' ]
+  env:
+  - 'BUILDPLATFORM=linux/amd64'
 images:
 - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}'
 
